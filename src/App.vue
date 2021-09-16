@@ -4,21 +4,21 @@
 
     <hr>
 
-    <LoginForm />
+    <!-- <LoginForm /> -->
 
     <hr>
 
-    <!-- <ComponentsForm /> -->
+    <ComponentsForm />
   </div>
 </template>
 
 <script>
-import LoginForm from '@/views/LoginForm.vue'
+// import LoginForm from '@/views/LoginForm.vue'
 // import SimpleForm from '@/views/SimpleForm'
-// import ComponentsForm from '@/views/ComponentsForm'
+import ComponentsForm from '@/views/ComponentsForm'
 
 export default {
-  components: { LoginForm } // SimpleForm, ComponentsForm,
+  components: { ComponentsForm } // SimpleForm, ComponentsForm,
 }
 </script>
 
