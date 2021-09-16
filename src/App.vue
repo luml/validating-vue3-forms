@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SimpleForm />
+    <!-- <SimpleForm /> -->
 
     <hr>
 
@@ -8,17 +8,17 @@
 
     <hr>
 
-    <ComponentsForm />
+    <!-- <ComponentsForm /> -->
   </div>
 </template>
 
 <script>
 import LoginForm from '@/views/LoginForm.vue'
-import SimpleForm from '@/views/SimpleForm'
-import ComponentsForm from '@/views/ComponentsForm'
+// import SimpleForm from '@/views/SimpleForm'
+// import ComponentsForm from '@/views/ComponentsForm'
 
 export default {
-  components: { SimpleForm, ComponentsForm, LoginForm }
+  components: { LoginForm } // SimpleForm, ComponentsForm,
 }
 </script>
 
@@ -207,6 +207,7 @@ textarea {
   -webkit-appearance: none;
 }
 [type="text"],
+[type="email"],
 [type="number"],
 [type="search"],
 [type="password"] {
@@ -216,6 +217,7 @@ textarea {
   font-size: 20px;
 }
 [type="text"]:focus,
+[type="email"]:focus,
 [type="number"]:focus,
 [type="search"]:focus,
 [type="password"]:focus {

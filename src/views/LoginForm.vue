@@ -1,8 +1,8 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <BaseInput label="Email" type="email" v-model="email" :error="errorMessage" />
-    <BaseInput label="Password" type="password" v-model="password" :error="errorMessage"/>
-    <BaseButton type="submit" class="-fill-gradient" />
+    <BaseInput label="Email" type="text" v-model="email" :error="emailError" />
+    <BaseInput label="Password" type="password" v-model="password" :error="passwordError"/>
+    <BaseButton type="submit" class="-fill-gradient">Submit</BaseButton>
   </form>
 </template>
 
@@ -15,24 +15,33 @@ export default {
     }
 
     const validations = {
-      email: value = () => {}
-      
+      email: (value) => {
+        const errorMessage = 'This field is required'
+        if (!value) return errorMessage
+        return true
+      },
+      password: (value) => {
+        const requiredMessage = 'This field is required'
+        if (value === undefined && value === null) return requiredMessage
+        if (!String(value).length) return requiredMessage
+
+        return true
+      }
     }
 
-    const email = useField('email', (value) => {
-      if (!value) return 'This field is required'
-      return true
+    useForm({
+      validationSchema: validations
     })
 
-    const password = useField('password', (value) => {
-      if (!value) return 'This field is required'
-      return true
-    })
+    const { value: email, errorMessage: emailError } = useField('email')
+    const { value: password, errorMessage: passwordError } = useField('password')
 
     return {
       onSubmit,
-      email: email.value,
-      password: password.value
+      email,
+      emailError,
+      password,
+      passwordError
     }
   }
 }
