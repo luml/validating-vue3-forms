@@ -70,6 +70,7 @@
 import { useField, useForm } from 'vee-validate'
 
 export default {
+  name: 'ComponentsForm',
   data () {
     return {
       categories: [

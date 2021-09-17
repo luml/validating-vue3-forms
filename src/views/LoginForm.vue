@@ -9,6 +9,7 @@
 <script>
 import { useField, useForm } from 'vee-validate'
 export default {
+  name: 'Login',
   setup () {
     function onSubmit () {
       alert('Submited!')

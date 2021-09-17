@@ -1,25 +1,15 @@
 <template>
   <div id="app">
-    <!-- <SimpleForm /> -->
-
-    <hr>
-
-    <!-- <LoginForm /> -->
-
-    <hr>
-
-    <ComponentsForm />
+    <router-link to="/">Home</router-link> |
+    <router-link to="/login">Login</router-link> |
+    <router-link to="/simpleform">SimpleForm</router-link> |
+    <router-link to="/componentsform">componentsform</router-link> |
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-// import LoginForm from '@/views/LoginForm.vue'
-// import SimpleForm from '@/views/SimpleForm'
-import ComponentsForm from '@/views/ComponentsForm'
-
-export default {
-  components: { ComponentsForm } // SimpleForm, ComponentsForm,
-}
+export default {}
 </script>
 
 <style>

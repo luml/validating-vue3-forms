@@ -90,6 +90,7 @@
 
 <script>
 export default {
+  name: 'Simpleform',
   data () {
     return {
       categories: [

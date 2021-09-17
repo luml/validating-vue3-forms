@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
+import router from './router'
 
 const requireComponent = require.context(
   './components',
@@ -20,5 +21,4 @@ requireComponent.keys().forEach(fileName => {
 
   app.component(componentName, componentConfig.default || componentConfig)
 })
-
-app.mount('#app')
+app.use(router).mount('#app')
