@@ -1,15 +1,12 @@
 <template>
-  <label
-    v-if="label"
-    :for="uuid"
-  >
+  <label v-if="label" :for="uuid">
     {{ label }}
   </label>
   <input
     class="field"
     v-bind="{
       ...$attrs,
-      onInput: updateValue
+      onInput: updateValue,
     }"
     :id="uuid"
     :value="modelValue"
@@ -17,11 +14,8 @@
     :aria-describedby="error ? `${uuid}-error` : null"
     :aria-invalid="error ? true : false"
     :class="{ error }"
-  >
-  <BaseErrorMessage
-    v-if="error"
-    :id="`${uuid}-error`"
-  >
+  />
+  <BaseErrorMessage v-if="error" :id="`${uuid}-error`">
     {{ error }}
   </BaseErrorMessage>
 </template>

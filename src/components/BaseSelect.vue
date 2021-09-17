@@ -1,15 +1,12 @@
 <template>
-  <label
-    v-if="label"
-    :for="uuid"
-  >
+  <label v-if="label" :for="uuid">
     {{ label }}
   </label>
   <select
     class="field"
     v-bind="{
       ...$attrs,
-      onChange: updateValue
+      onChange: updateValue,
     }"
     :value="modelValue"
     :id="uuid"
@@ -26,10 +23,7 @@
       {{ option }}
     </option>
   </select>
-  <BaseErrorMessage
-    v-if="error"
-    :id="`${uuid}-error`"
-  >
+  <BaseErrorMessage v-if="error" :id="`${uuid}-error`">
     {{ error }}
   </BaseErrorMessage>
 </template>

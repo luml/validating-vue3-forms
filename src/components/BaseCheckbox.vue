@@ -6,16 +6,10 @@
     type="checkbox"
     class="field"
   />
-  <label
-    :for="uuid"
-    v-if="label"
-  >
+  <label :for="uuid" v-if="label">
     {{ label }}
   </label>
-  <BaseErrorMessage
-    v-if="error"
-    :id="`${uuid}-error`"
-  >
+  <BaseErrorMessage v-if="error" :id="`${uuid}-error`">
     {{ error }}
   </BaseErrorMessage>
 </template>

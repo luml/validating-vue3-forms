@@ -1,7 +1,12 @@
 <template>
   <form @submit.prevent="onSubmit">
     <BaseInput label="Email" type="text" v-model="email" :error="emailError" />
-    <BaseInput label="Password" type="password" v-model="password" :error="passwordError"/>
+    <BaseInput
+      label="Password"
+      type="password"
+      v-model="password"
+      :error="passwordError"
+    />
     <BaseButton type="submit" class="-fill-gradient">Submit</BaseButton>
   </form>
 </template>

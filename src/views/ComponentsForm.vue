@@ -20,7 +20,12 @@
       />
 
       <h3>Where is your event?</h3>
-      <BaseInput label="Location" v-model="location" :error="errors.location" type="text" />
+      <BaseInput
+        label="Location"
+        v-model="location"
+        :error="errors.location"
+        type="text"
+      />
 
       <h3>Are pets allowed?</h3>
       <BaseRadioGroup
@@ -61,8 +66,6 @@
         </BaseButton>
       </div>
     </form>
-
-    <!-- <pre>{{ event }}</pre> -->
   </div>
 </template>
 
@@ -132,7 +135,7 @@ export default {
     const { value: catering } = useField('catering')
     const { value: music } = useField('music')
 
-    const submit = handleSubmit(values => {
+    const submit = handleSubmit((values) => {
       console.log('submit', values)
     })
 
