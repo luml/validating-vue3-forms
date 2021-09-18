@@ -1,7 +1,6 @@
 <template>
-  <transition>
-    <h3>vee-validate form vibes</h3>
-  </transition>
+    <!-- feather-icons libary -->
+    <h3><BaseIcon name="circle" />vee-validate form vibes</h3>
 </template>
 
 <script>
